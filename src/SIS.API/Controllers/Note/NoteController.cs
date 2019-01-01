@@ -26,6 +26,7 @@ namespace RedStarter.API.Controllers.Note
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin, User")] //<--- Explained in Video 11.
         public async Task<IActionResult> PostNote(NoteCreateRequest request)
         {
 
