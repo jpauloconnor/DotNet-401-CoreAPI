@@ -17,6 +17,10 @@ namespace RedStarter.API.MappingProfiles
             CreateMap<NoteCreateRequest, NoteCreateDTO>();
             CreateMap<NoteCreateDTO, NoteCreateRAO>();
             CreateMap<NoteCreateRAO, NoteEntity>();
+
+            //TODO 4: Set up in proper MappingProfile.
+            CreateMap<NoteImageRequest, NoteImageDTO>();
+
         }
     }
 }

@@ -16,6 +16,7 @@ using RedStarter.API.MappingProfiles;
 using RedStarter.Business.DataContract.Application.Interfaces;
 using RedStarter.Business.DataContract.Authorization.Interfaces;
 using RedStarter.Business.DataContract.Note;
+using RedStarter.Business.Engines;
 using RedStarter.Business.Managers.Application;
 using RedStarter.Business.Managers.Authorization;
 using RedStarter.Business.Managers.Note;
@@ -115,6 +116,7 @@ namespace RedStarter.API
             services.AddScoped<IUserApplicationManager, UserApplicationManager>();
             services.AddScoped<INoteManager, NoteManager>();
             services.AddScoped<INoteRepository, NoteRepository>();
+            services.AddScoped<IImageEngine, ImageEngine>();
 
 
             //======= Swagger =======

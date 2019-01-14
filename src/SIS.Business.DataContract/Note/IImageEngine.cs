@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace RedStarter.Business.DataContract.Note
 {
-    public interface INoteManager
+    public interface IImageEngine
     {
-        Task<bool> CreateNote(NoteCreateDTO dto);
-        Task<bool> UploadeNoteImage(NoteImageDTO image);
+        string UploadImageAndGetURL(NoteImageDTO image);
     }
 }

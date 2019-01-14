@@ -24,7 +24,6 @@ namespace RedStarter.API.Controllers.Note
             _manager = manager;
         }
 
-
         [HttpPost]
         [Authorize(Roles = "Admin, User")] //<--- Explained in Video 11.
         public async Task<IActionResult> PostNote(NoteCreateRequest request)
@@ -46,6 +45,21 @@ namespace RedStarter.API.Controllers.Note
                 return StatusCode(201);
 
             throw new Exception();
+        }
+
+           //TODO 1: Start out just stubbing this out like below. Create the NoteImageRequest class.
+        [HttpPost("UploadNoteImage")]
+        public async Task<IActionResult> UploadNoteImage([FromForm]NoteImageRequest image)
+        {
+            //TODO 2: Test in Postman and set a breakpoint at this spot when you write it.
+
+            //TODO 3: You'll need to create the NoteImageDTO 
+            var dto = _mapper.Map<NoteImageDTO>(image);
+
+            //TODO 5: Add an UploadFooImage method to the manager. Add the method to the interface for the manager. 
+            var success = await _manager.UploadeNoteImage(dto);
+
+            return Ok(); //TODO: Make StatusCode 201?
         }
     }
 }
